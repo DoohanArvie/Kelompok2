@@ -1,5 +1,5 @@
 @extends('layouts.sbadmin2')
-@include('flash::message')
+
 @section('content')
     <div class="card">
         <div class="card-header">
@@ -19,11 +19,11 @@
                     </form>
                 </div>
             </div>
-            <div class="table-responsive">
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th>no antrian</th>
+                        <th>ID</th>
+                        <th>Kode</th>
                         <th>Nama</th>
                         <th>Nomor HP</th>
                         <th>Tanggal Buat</th>
@@ -33,6 +33,7 @@
                 <tbody>
                     @forelse ($pasien as $item)
                         <tr>
+                            <td>{{ $item->id }}</td>
                             <td>{{ $item->kode_pasien }}</td>
                             <td>{{ $item->nama_pasien }}</td>
                             <td>{{ $item->nomor_hp }}</td>
@@ -56,7 +57,6 @@
                     @endforelse
                 </tbody>
             </table>
-            </div>
         </div>
     </div>
 @endsection

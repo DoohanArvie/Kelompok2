@@ -14,7 +14,7 @@
             {{ $judul }}
         </div>
         <div class="card-body">
-            @if (auth()->user()->role != 'pasien' && auth()->user()->role != 'dokter')
+            @if (auth()->user()->role != 'dokter')
                 <a href="{{ route('administrasi.create') }}" class="btn btn-primary mb-3">Tambah Data</a>
             @endif
             <div class="table-responsive">
@@ -26,9 +26,7 @@
                             <th>Keluhan</th>
                             <th>Biaya</th>
                             <th>Status</th>
-                            @if (auth()->user()->role != 'pasien')
-                                <th width="20%">Aksi</th>
-                            @endif
+                            <th width="20%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -49,27 +47,35 @@
                                         <dt class="col-md-4">Dokter</dt>
                                         <dd class="col-md-8">: {{ $item->dokter->nama_dokter }}</dd>
                                     </dl>
+
                                 </td>
                                 <td>
                                     <div><strong>Keluhan</strong>: {{ $item->keluhan }}</div>
-                                    <div><strong>Diagnosa:</strong> {{ $item->diagnosis }}</div>
+                                    <div>
+                                        <strong>Diagnosa:</strong>
+                                        {{ $item->diagnosis }}
+                                    </div>
                                 </td>
                                 <td>Rp. {{ number_format($item->biaya, 0, ',', '.') }}</td>
                                 <td>
-                                    <span class="badge badge-pill badge-{{ $item->status == 'baru' ? 'primary' : 'success' }}" style="font-size: 100% !important;">{{ $item->status }}</span>
+                                    <span
+                                        class="badge badge-pill badge-{{ $item->status == 'baru' ? 'primary' : 'success' }}"
+                                        style="font-size: 100% !important;">{{ $item->status }}</span>
                                 </td>
-                                @if (auth()->user()->role != 'pasien')
-                                    <td>
-                                        <a href="/administrasi/{{ $item->id }}/edit" class="btn btn-primary">Diagnosis</a>
-                                        @if (auth()->user()->role == 'admin')
-                                            <form action="{{ route('administrasi.destroy', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                                                @method('DELETE')
-                                                @csrf
-                                                <button type="submit" class="btn btn-danger">Hapus</button>
-                                            </form>
-                                        @endif
-                                    </td>
-                                @endif
+                                <td>
+                                    <a href="/administrasi/{{ $item->id }}/edit" class="btn btn-primary">
+                                        Diagnosis
+                                    </a>
+                                    @if (auth()->user()->role == 'admin')
+                                        <form action="{{ route('administrasi.destroy', $item->id) }}" method="POST"
+                                            class="d-inline"
+                                            onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                                            @method('DELETE')
+                                            @csrf
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
+                                        </form>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>

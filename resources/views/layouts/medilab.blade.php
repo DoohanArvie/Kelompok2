@@ -10,8 +10,8 @@
     <meta content="" name="keywords">
 
     <!-- Favicons -->
-    <link href="/medilab/assets/img/lgors16x16.png" rel="icon">
-    <link href="/medilab/assets/img/lgors16x16.png" rel="apple-touch-icon">
+    <link href="/medilab/assets/img/favicon.png" rel="icon">
+    <link href="/medilab/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
     <!-- Google Fonts -->
     <link
@@ -46,13 +46,14 @@
     <div id="topbar" class="d-flex align-items-center fixed-top">
         <div class="container d-flex justify-content-between">
             <div class="contact-info d-flex align-items-center">
-                <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">eclipsemedical45@gmail.com</a>
-                <i class="bi bi-phone"></i> 0895414990411
+                <i class="bi bi-envelope"></i> <a href="mailto:contact@example.com">contact@example.com</a>
+                <i class="bi bi-phone"></i> +1 5589 55488 55
             </div>
             <div class="d-none d-lg-flex social-links align-items-center">
                 <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
                 <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
                 <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></i></a>
             </div>
         </div>
     </div>
@@ -61,7 +62,7 @@
     <header id="header" class="fixed-top">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="#hero"><img src="{{ asset ('medilab/assets/img/logors.png') }}" alt="" class="img-fluid"> Eclipse Medical </a></h1>
+            <h1 class="logo me-auto"><a href="#hero">Medilab</a></h1>
             <!-- Uncomment below if you prefer to use an image logo -->
             <!-- <a href="index.html" class="logo me-auto"><img src="/medilab/assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
@@ -70,12 +71,12 @@
                     <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
                     <li><a class="nav-link scrollto" href="#services">Services</a></li>
                     <li><a class="nav-link scrollto" href="#doctors">Doctors</a></li>
-                    <li><a class="nav-link scrollto" href="/login">Login</a></li>
                 </ul>
                 <i class="bi bi-list mobile-nav-toggle"></i>
             </nav><!-- .navbar -->
 
-            
+            <a href="/login" class="appointment-btn scrollto"><span class="d-none d-md-inline">Login</span>
+               </a>
 
         </div>
     </header><!-- End Header -->
@@ -85,7 +86,7 @@
     <div class="container">
       <h1>Welcome to <br>Eclipse Medical Center</h1>
       <h2>Mengutamakan Kesehatan, Mengedepankan Kenyamanan</h2>
-      <a href="/register" class="btn-get-started scrollto">Daftar</a>
+      <a href="/login" class="btn-get-started scrollto">Get Started</a>
     </div>
   </section><!-- End Hero -->
 
@@ -104,6 +105,7 @@
               serta dilengkapi dengan teknologi medis terkini dan fasilitas modern.  
               </p>
               <div class="text-center">
+                <a href="#about" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
           </div>
@@ -145,7 +147,9 @@
             <div class="container">
                 <div class="section-title">
                     <h2><a href="#services">Layanan Poli</a></h2>
-                    <p>Eclipse Medical Center menawarkan berbagai layanan spesialis untuk memenuhi berbagai kebutuhan kesehatan pasien. Berikut adalah beberapa layanan spesialis yang biasanya tersedia di pusat medis</p>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
 
                 <div class="row">
@@ -204,7 +208,21 @@
 
             </div>
         </section><!-- End Doctors Section -->
-        
+        <!-- ======= Appointment Section ======= -->
+        <section id="appointment" class="appointment section-bg">
+            <div class="container">
+
+                <div class="section-title">
+                    <h2>REGISTRASI PASIEN</h2>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+                </div>
+                @include('flash::message')
+                @yield('content')
+            </div>
+        </section><!-- End Appointment Section -->
+
 
 
        <!-- ======= Frequently Asked Questions Section ======= -->
@@ -236,6 +254,14 @@
               </div>
             </li>
 
+            <li data-aos="fade-up" data-aos-delay="200">
+              <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-3" class="collapsed">Layanan unggulan apa saja yang ada di Eclipse Medical Center?  <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+              <div id="faq-list-3" class="collapse" data-bs-parent=".faq-list">
+                <p>
+                Eclipse Medical Center menyediakan berbagai pelayanan unggulan spesialis kesehatan, bisa dilihat <a href="#departments">di sini.</a>
+                </p>
+              </div>
+            </li>
 
             <li data-aos="fade-up" data-aos-delay="300">
               <i class="bx bx-help-circle icon-help"></i> <a data-bs-toggle="collapse" data-bs-target="#faq-list-4" class="collapsed">Pukul berapa layanan praktik di Eclipse Medical Center dibuka? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
@@ -268,7 +294,9 @@
 
                 <div class="section-title">
                     <h2>Gallery</h2>
-                    <p>Eclipse Medical Center memiliki berbagai fasilitas modern untuk memastikan kenyamanan dan perawatan berkualitas tinggi bagi pasien. Berikut adalah gambaran galeri fasilitas yang tersedia di pusat medis ini:</p>
+                    <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit
+                        sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias
+                        ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
                 </div>
             </div>
 
@@ -372,22 +400,27 @@
             </div>
 
             <div class="col-lg-2 col-md-6 footer-links">
-                
-            </div>
-
-            <div class="col-lg-3 col-md-5 footer-links">
-            <h4>Useful Links</h4>
+                <h4>Useful Links</h4>
                 <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#services">Services</a></li>
-                <li><i class="bx bx-chevron-right"></i> <a href="#doctors">Doctor</a></li>
                 
+                </ul>
+            </div>
+
+            <div class="col-lg-3 col-md-6 footer-links">
+                <ul>
+                <h4></h4>
+                <li><i class="bx bx-chevron-right"></i> <a href="#facility">Facility</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#doctors">Doctor</a></li>
+                <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
                 </ul>
             </div>
 
             <div class="col-lg-4 col-md-6 footer-newsletter">
                 <h4></h4>
-                <h2 class="logo me-auto"><img src="{{ asset ('medilab/assets/img/lgors16x16.png') }}" alt="" class="img-fluid">  Eclipse Medical</a></h2>
+                <h2 class="logo me-auto"><img src="{{ asset ('landingpage/img/lgors16x16.png') }}" alt="" class="img-fluid">  Eclipse Medical</a></h2>
             <p>Mengutamakan Kesehatan, Mengedepankan Kenyamanan</p>
             </div>
 

@@ -3,7 +3,6 @@
     <div class="card">
         <div class="card-header"> {{ $judul }} </div>
         <div class="card-body">
-            <div class="table-responsive">
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
@@ -38,7 +37,6 @@
                     @endforeach
                 </tbody>
             </table>
-            </div>
         </div>
     </div>
 @endsection

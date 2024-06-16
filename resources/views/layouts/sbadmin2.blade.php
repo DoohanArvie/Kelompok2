@@ -9,10 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Eclipse Medical Center</title>
-
-    <link href="/medilab/assets/img/lgors16x16.png" rel="icon">
-    <link href="/medilab/assets/img/lgors16x16.png" rel="apple-touch-icon">
+    <title>{{ env('APP_NAME') }}</title>
 
     <!-- Custom fonts for this template-->
     <link href="{{ asset('sbadmin2') }}/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -35,9 +32,9 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/home">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
-                <img src="{{ asset ('medilab/assets/img/lgors16x16.png') }}" alt="" class="img-fluid">
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
                 <div class="sidebar-brand-text mx-1">Eclipse MediCen</div>
             </a>
@@ -116,7 +113,6 @@
                 </li>
             @endif
 
-
             @if (auth()->user()->role == 'pasien')
                 <li class="nav-item {{ Route::is('registrasipasien.create') ? 'active' : '' }} ">
                     <a class="nav-link" href="/pasien/registrasi">
@@ -125,14 +121,6 @@
                 </li>
             @endif
 
-            @if (auth()->user()->role == 'pasien')
-                <li class="nav-item {{ Route::is('administrasi.pasien') ? 'active' : '' }}">
-                    <a class="nav-link" href="/administrasi">
-                        <i class="fas fa-fw fa-users"></i>
-                        <span>Hasil dokter</span>
-                    </a>
-                </li>
-            @endif
             <!-- Nav Item - Pages Collapse Menu -->
             @if (auth()->user()->role == 'admin')
                 <!-- Divider -->
@@ -183,7 +171,19 @@
 
             <!-- Nav Item - Utilities Collapse Menu -->
             @if (auth()->user()->role == 'admin' || auth()->user() == 'operator')
-                <li class="nav-item">
+                <li class="nav-item {{ Route::is('administrasi.index') ? 'active' : '' }} ">
+                    <a class="nav-link" href="/administrasi">
+                        <i class="fas fa-fw fa-cogs"></i>
+                        <span>Data Administrasi</span>
+                    </a>
+                </li>
+                <li class="nav-item {{ Route::is('administrasi.create') ? 'active' : '' }} ">
+                    <a class="nav-link" href="/administrasi/create">
+                        <i class="fas fa-fw fa-plus"></i>
+                        <span>Tambah Administrasi</span>
+                    </a>
+                </li>
+                {{-- <li class="nav-item">
                     <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseUtilities"
                         aria-expanded="true" aria-controls="collapseUtilities">
                         <i class="fas fa-fw fa-wrench"></i>
@@ -197,11 +197,9 @@
                                 href="/administrasi/create">Tambah administrasi</a>
                             <a class="collapse-item {{ Route::is('administrasi.index') ? 'active' : '' }}"
                                 href="/administrasi">Daftar administrasi</a>
-                            <a class="collapse-item {{ Route::is('laporan.adm') ? 'active' : '' }}"
-                                href="/laporan/administrasi">Laporan administrasi</a>
                         </div>
                     </div>
-                </li> 
+                </li> --}}
             @endif
 
 

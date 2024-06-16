@@ -5,7 +5,6 @@
         <div class="card-header">{{ $judul }}</div>
         <div class="card-body">
             <a href="/user/create" class="btn btn-primary mb-2">Tambah Data</a>
-            <div class="table-responsive">
             <table class="table table-bordered table-hover">
                 <thead>
                     <tr>
@@ -40,7 +39,6 @@
                     @endforeach
                 </tbody>
             </table>
-            </div>
         </div>
     </div>
 @endsection

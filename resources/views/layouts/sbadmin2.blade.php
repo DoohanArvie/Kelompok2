@@ -90,8 +90,6 @@
                             <h6 class="collapse-header">Administrasi Pasien:</h6>
                             <a class="collapse-item {{ Route::is('administrasi.create') ? 'active' : '' }}"
                                 href="/administrasi/create">Tambah Pasien</a>
-                            <a class="collapse-item  {{ Route::is('pasien.index') ? 'active' : '' }}"
-                                href="/pasien">Daftar Antrian Pasien</a>
                             <a class="collapse-item {{ Route::is('administrasi.index') ? 'active' : '' }}"
                                 href="/administrasi">Daftar Konsultasi Pasien</a>
                         </div>
@@ -124,6 +122,7 @@
                     </a>
                 </li>
             @endif
+
             <!-- Nav Item - Pages Collapse Menu -->
             @if (auth()->user()->role == 'admin')
                 <!-- Divider -->

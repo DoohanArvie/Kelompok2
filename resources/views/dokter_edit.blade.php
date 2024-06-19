@@ -24,11 +24,14 @@
                 <div class="form-group mt-3">
                     <label for="spesialis">Spesialis</label>
                     <select name="spesialis" class="form-control">
-                        <option value="mata" @selected($dokter->spesialis == 'mata')> Spesialis Mata</option>
+                    <option value="mata" @selected($dokter->spesialis == 'mata')> Spesialis Mata</option>
                         <option value="tht" @selected($dokter->spesialis == 'tht')> Spesialis THT</option>
-                        <option value="jantung" @selected($dokter->spesialis == 'jantung')>
-                            Spesialis Jantung
-                        </option>
+                        <option value="jantung" @selected($dokter->spesialis == 'jantung')> Spesialis Jantung</option>
+                        <option value="anak" @selected($dokter->spesialis == 'anak')> Spesialis Ibu dan Anak </option>
+                        <option value="paru" @selected($dokter->spesialis == 'saraf')> Spesialis Gizi </option>
+                        <option value="paru" @selected($dokter->spesialis == 'kulit')> Spesialis Kulit dan Kelamin </option>
+                        <option value="paru" @selected($dokter->spesialis == 'tulang')> Spesialis Tulang </option>
+                        <option value="paru" @selected($dokter->spesialis == 'bedah')> Spesialis Bedah </option>
                         <option value="paru" @selected($dokter->spesialis == 'paru')> Spesialis Paru </option>
                     </select>
                     <span class="text-danger">{{ $errors->first('spesialis') }}</span>

@@ -23,11 +23,11 @@
                         <option value="mata" @selected(old('spesialis') == 'mata')> Spesialis Mata</option>
                         <option value="tht" @selected(old('spesialis') == 'tht')> Spesialis THT</option>
                         <option value="jantung" @selected(old('spesialis') == 'jantung')> Spesialis Jantung</option>
-                        <option value="paru" @selected(old('spesialis') == 'anak')> Spesialis Ibu dan Anak</option>
-                        <option value="paru" @selected(old('spesialis') == 'saraf')> Spesialis Gizi</option>
-                        <option value="paru" @selected(old('spesialis') == 'kulit')> Spesialis Kulit dan Kelamin</option>
-                        <option value="paru" @selected(old('spesialis') == 'tulang')> Spesialis Tulang</option>
-                        <option value="paru" @selected(old('spesialis') == 'bedah')> Spesialis Bedah</option>
+                        <option value="anak" @selected(old('spesialis') == 'anak')> Spesialis Ibu dan Anak</option>
+                        <option value="gizi" @selected(old('spesialis') == 'gizi')> Spesialis Gizi</option>
+                        <option value="kulit" @selected(old('spesialis') == 'kulit')> Spesialis Kulit dan Kelamin</option>
+                        <option value="tulang" @selected(old('spesialis') == 'tulang')> Spesialis Tulang</option>
+                        <option value="bedah" @selected(old('spesialis') == 'bedah')> Spesialis Bedah</option>
                     </select>
                     <span class="text-danger">{{ $errors->first('spesialis') }}</span>
                 </div>
